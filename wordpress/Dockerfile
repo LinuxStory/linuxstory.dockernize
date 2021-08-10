@@ -4,7 +4,7 @@ RUN set -ex; \
 	apt-get update; \
 	apt-get install nginx nginx-common -y; \
 	apt-get install vim m4 -y; \
-	apt-get install php7.0 php7.0-fpm php7.0-mysql php7.0-cli php7.0-common php7.0-json php7.0-opcache php7.0-readline php7.0-mbstring php7.0-xml php7.0-gd php7.0-curl -y
+	apt-get install php7.3 php7.3-fpm php7.3-mysql php7.3-cli php7.3-common php7.3-json php7.3-opcache php7.3-readline php7.3-mbstring php7.3-xml php7.3-gd php7.3-curl -y
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh

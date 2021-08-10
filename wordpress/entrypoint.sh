@@ -11,6 +11,6 @@ if [ "8" = "$#" ]; then
 	m4 -DWP_SERVER_NAME="$2" -DWP_SITE_ROOT="$4" -DWP_CERT_PATH="$6" -DWP_CERT_KEY_PATH="8" /config/wp-nginx.ssl.conf > /etc/nginx/sites-available/default
 fi
 
-service php7.0-fpm start
+service php7.3-fpm start
 service nginx start
 exec /bin/bash
