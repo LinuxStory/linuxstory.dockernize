@@ -14,12 +14,12 @@ COPY config /config/
 
 RUN sed -i 's/listen = \/run\/php\/php7.4-fpm\.sock/listen = \/tmp\/php-fpm\.sock/g' /etc/php/7.4/fpm/pool.d/www.conf
 RUN sed -i 's/pm = dynamic/pm = static/g' /etc/php/7.4/fpm/pool.d/www.conf
-RUN sed -i 's/pm.max_children = 5/pm.max_children = 8/g' /etc/php/7.4/fpm/pool.d/www.conf
+RUN sed -i 's/pm.max_children = 5/pm.max_children = 4/g' /etc/php/7.4/fpm/pool.d/www.conf
 RUN sed -i 's/;listen.backlog = 511/listen.backlog = 2048/g' /etc/php/7.4/fpm/pool.d/www.conf
 
 RUN sed -i 's/max_execution_time = 30/max_execution_time = 60/g' /etc/php/7.4/fpm/php.ini
 RUN sed -i 's/max_input_time = 60/max_input_time = 100/g' /etc/php/7.4/fpm/php.ini
-RUN sed -i 's/memory_limit = 128M/memory_limit = 256M/g' /etc/php/7.4/fpm/php.ini
+RUN sed -i 's/memory_limit = 128M/memory_limit = 196M/g' /etc/php/7.4/fpm/php.ini
 RUN sed -i 's/post_max_size = 8M/post_max_size = 128M/g' /etc/php/7.4/fpm/php.ini
 RUN sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 100M/g' /etc/php/7.4/fpm/php.ini
 
