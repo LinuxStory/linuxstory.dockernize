@@ -8,5 +8,10 @@ if [ "4" = "$#" ]; then
 fi
 
 service php7.4-fpm start
+
+mkdir -p /fastcgi-cache
+chown www-data /fastcgi-cache
+chmod 755 /fastcgi-cache
 service nginx start
+
 exec /bin/bash
