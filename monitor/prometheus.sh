@@ -1,6 +1,2 @@
-sudo docker run --name prometheus -dt \
-    --link cadvisor \
-    --link node_exporter \
-    -p 7790:9090 \
-    -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml \
-    prom/prometheus
+sudo docker run --name prometheus -dt --link cadvisor --link node_exporter -p 7790:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml \
+  --entrypoint='/bin/sh' prom/prometheus -c '/bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus --storage.tsdb.retention.size=2GB --web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/console'
